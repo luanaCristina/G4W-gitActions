@@ -28,7 +28,7 @@ jobs:
             name: node-project-artifact
             path: | 
               ./
-              !./nome_modules
+              |./nome_modules
     
     depoy:
       name: Deploy to Azure Web App
