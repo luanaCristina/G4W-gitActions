@@ -20,7 +20,7 @@ jobs:
         # npm test foi retirado da linha 24
         - name: 'npm install and test'
           run: | 
-            cd path/to/folder
+            cd path/at/folder
             npm install
             npm test
         
