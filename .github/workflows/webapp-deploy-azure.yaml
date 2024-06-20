@@ -19,6 +19,7 @@ jobs:
 
         # npm test foi retirado da linha 24
         - name: 'npm install and test'
+        - uses: actions/checkout@v3
           run: | 
             npm install
         
