@@ -28,6 +28,8 @@ jobs:
       # adicionando com o marketplace - by actions é do próprio github - observar a identação
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.2
+        with: 
+          node-version: ${{ matrix.node-version }}
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
