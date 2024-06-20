@@ -3,7 +3,7 @@ name: Azure Web App DeployY
 on: 
   push:
     branches: 
-      -main
+      - main
 
 jobs:
     build:
@@ -31,28 +31,28 @@ jobs:
               |./nome_modules
     
     depoy:
-      name: Deploy to Azure Web App
-      runs-on: ubuntu-latest
-      needs: build
-  
-      steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with: 
-          name: node-project-artifact
-          path: ./
-      
-      - name: 'npm install'
-        run: | 
-          npm install
-      
-      - name: 'Login via Azure CLI'
-        uses: azure/login@v1
-        with: 
-          creds: ${{ secrets.AZURE.CREDENTIALS }}
-      
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'github-actions-demo-dfoggi'
-          slot-name: 'production'
+        name: Deploy to Azure Web App
+        runs-on: ubuntu-latest
+        needs: build
+    
+        steps:
+        - name: Download artifact
+          uses: actions/download-artifact@v2
+          with: 
+            name: node-project-artifact
+            path: ./
+        
+        - name: 'npm install'
+          run: | 
+            npm install
+        
+        - name: 'Login via Azure CLI'
+          uses: azure/login@v1
+          with: 
+            creds: ${{ secrets.AZURE.CREDENTIALS }}
+        
+        - name: Deploy to Azure Web App
+          uses: azure/webapps-deploy@v2
+          with:
+            app-name: 'github-actions-demo-dfoggi'
+            slot-name: 'production'
